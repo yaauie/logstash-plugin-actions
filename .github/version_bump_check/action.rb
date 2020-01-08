@@ -10,3 +10,10 @@ puts ENV.inspect
 
 puts "\nlisting files"
 puts `ls`
+
+require "rubygems"
+
+gemspec_path = Dir.glob("*.gemspec").first
+spec = Gem::Specification::load(gemspec_path)
+
+puts "Current version is #{spec.version}"
